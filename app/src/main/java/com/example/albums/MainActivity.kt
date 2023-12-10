@@ -29,8 +29,8 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
+                    // navigation
                     val navController = rememberNavController()
-
                     NavHost(navController = navController, startDestination = "firstScreen") {
                         composable("firstScreen") {
                             userScreen(userViewModel = androidx.lifecycle.viewmodel.compose.viewModel(), navController)
@@ -44,11 +44,7 @@ class MainActivity : ComponentActivity() {
             }
         }
     }
-    @RequiresExtension(extension = Build.VERSION_CODES.S, version = 7)
-    @Composable
-    fun MyApp() {
 
-    }
 }
 
 

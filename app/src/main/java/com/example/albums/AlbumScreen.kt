@@ -33,12 +33,9 @@ import coil.compose.rememberAsyncImagePainter
 @Composable
 fun AlbumGridScreen(albumId: Int, userViewModel: UserViewModel) {
     val albums by userViewModel.albums
-
     val photos by userViewModel.photos.observeAsState(initial = emptyList())
-
-
-
     var searchQuery by remember { mutableStateOf("") }
+
 
     Column(
         modifier = Modifier
@@ -52,6 +49,7 @@ fun AlbumGridScreen(albumId: Int, userViewModel: UserViewModel) {
             fontWeight = FontWeight.Bold,
             modifier = Modifier.padding(bottom = 8.dp)
         )
+        // Search bar
         OutlinedTextField(
             value = searchQuery,
             onValueChange = { newValue ->
@@ -62,6 +60,7 @@ fun AlbumGridScreen(albumId: Int, userViewModel: UserViewModel) {
                 .fillMaxWidth()
                 .padding(bottom = 8.dp)
         )
+        // Grid
         PhotosGrid(
             photos = photos.filter { it.title.contains(searchQuery, true) },
         )
@@ -69,7 +68,7 @@ fun AlbumGridScreen(albumId: Int, userViewModel: UserViewModel) {
 }
 @Composable
 fun PhotosGrid(photos: List<Photo>) {
-    println(photos)
+    // the image grid
     LazyVerticalGrid(columns = GridCells.Fixed(4)) {
         items(photos) { photo ->
             Box {
