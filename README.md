@@ -1,6 +1,8 @@
 # Album Project
 This project is a simple application for managing and displaying albums, users, and photos. It utilizes the Retrofit library to fetch data from a RESTful API and displays the retrieved data in a user-friendly interface.
 
+![Untitled (1)](https://github.com/mostafadelgouda/Albums/assets/56961667/09f69c11-0b66-4791-8d2d-d72bfce7e8c8)
+
 ## Features
 - View a list of albums
 - View details of individual albums
